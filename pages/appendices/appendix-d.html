@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Приложение Г · Примеры кода</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/print.css">
+</head>
+<body>
+  <div class="app">
+       <header class="header">
+      <div>
+        <h1 class="header__title">Приложение А</h1>
+        <div class="header__subtitle">Глоссарий</div>
+        <div class="header__author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</div>
+      </div>
+      <div class="header__progress">Прогресс: <span id="progressValue">0%</span></div>
+    </header>
+    <aside class="sidebar" data-nav-root="../../"></aside>
+    <main class="main">
+      <div class="breadcrumbs"><a href="../../index.html">Главная</a><span>›</span>Приложение Г</div>
+
+      <h2>Строка подключения Firebird</h2>
+      <pre><code>var cs = "DataSource=localhost;Port=3050;Database=employees.fdb;" +
+         "Username=SYSDBA;Password=5;Dialect=3;Charset=UTF8";</code></pre>
+
+      <h2>Настройка DbContext (EF Core + Firebird)</h2>
+      <pre><code>using Microsoft.EntityFrameworkCore;
+
+public class AppDbContext : DbContext {
+    public DbSet&lt;Employee&gt; Employees { get; set; }
+    public DbSet&lt;Department&gt; Departments { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder o)
+        =&gt; o.UseFirebird(
+            "DataSource=localhost;Port=3050;Database=employees.fdb;" +
+            "Username=SYSDBA;Password=5;Charset=UTF8");
+}</code></pre>
+
+      <h2>Scaffolding моделей из Firebird</h2>
+      <pre><code>dotnet ef dbcontext scaffold \
+  "DataSource=localhost;Port=3050;Database=employees.fdb;Username=SYSDBA;Password=5;Charset=UTF8" \
+  FirebirdSql.EntityFrameworkCore.Firebird \
+  --context AppDbContext \
+  --output-dir Models</code></pre>
+
+      <h2>Подключение через ADO.NET</h2>
+      <pre><code>using FirebirdSql.Data.FirebirdClient;
+
+var cs = "DataSource=localhost;Port=3050;Database=employees.fdb;" +
+         "Username=SYSDBA;Password=5;Charset=UTF8";
+await using var conn = new FbConnection(cs);
+await conn.OpenAsync();</code></pre>
+
+      <h2>Шаблон DataGrid (XAML)</h2>
+      <pre><code>&lt;DataGrid ItemsSource="{Binding Employees}" AutoGenerateColumns="True" /&gt;</code></pre>
+
+      <h2>Вызов печати</h2>
+      <pre><code>var print = this.GetService&lt;IPrintService&gt;();
+await print.PrintAsync("Отчёт");</code></pre>
+
+      <div class="btn-group">
+        <a href="appendix-c.html" class="btn btn--secondary">← В. Окружение</a>
+        <a href="appendix-e.html" class="btn">Д. Литература →</a>
+      </div>
+    </main>
+      <footer class="footer">
+      Электронная рабочая тетрадь · 2026<br>
+      <span class="author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</span>
+    </footer>
+  </div>
+  <script src="../../js/storage.js"></script>
+  <script src="../../js/navigation.js"></script>
+  <script src="../../js/main.js"></script>
+</body>
+</html>

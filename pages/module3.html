@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Модуль 3 · Авторизация и CRUD</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div>
+        <h1 class="header__title">ЭРТ: Модуль 3</h1>
+        <div class="header__subtitle">Авторизация и работа с данными на форме</div>
+        <div class="header__author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</div>
+      </div>
+      <div class="header__progress">Прогресс: <span id="progressValue">0%</span></div>
+    </header>
+    <aside class="sidebar" data-nav-root="../"></aside>
+    <main class="main">
+      <div class="breadcrumbs"><a href="../index.html">Главная</a><span>›</span>Модуль 3</div>
+
+      <div class="card card--highlight">
+        <h2>Цель модуля</h2>
+        <p>Реализовать окно входа и основной интерфейс для просмотра и редактирования данных.</p>
+      </div>
+
+      <h2>Теория и практика</h2>
+
+      <!-- Тема 3.1 -->
+      <div class="card">
+        <h3>Тема 3.1. Реализация окна авторизации</h3>
+        <div class="theory-block">
+          <h4>Теория</h4>
+          <p>Окно авторизации (LoginWindow) должно перехватывать ввод логина и пароля. После нажатия кнопки «Войти» приложение отправляет запрос к таблице пользователей в БД Firebird. Если учетные данные совпадают, открывается главное окно, иначе выводится сообщение об ошибке.</p>
+        </div>
+        <div class="practice-block">
+          <h4>Практическое задание</h4>
+          <p>Создайте разметку XAML для окна авторизации (поля ввода и кнопка). Вставьте код XAML в поле ниже или загрузите скриншот окна.</p>
+          <textarea data-progress-id="m3t1_text" placeholder="<TextBox Name=&quot;LoginBox&quot; ... />"></textarea>
+          <div class="file-upload-wrapper" style="margin-top:1rem;">
+            <label class="file-upload-label">
+              📎 Скриншот окна
+              <input type="file" class="file-upload-input" accept="image/*" data-progress-id="m3t1_file">
+            </label>
+            <span id="status_m3t1_file" style="font-size:0.9rem; color:var(--blue-700);">Файл не выбран</span>
+          </div>
+          <img id="preview_m3t1_file" class="preview-img" alt="Превью">
+        </div>
+      </div>
+
+      <!-- Тема 3.2 -->
+      <div class="card">
+        <h3>Тема 3.2. Построение главного окна с DataGrid</h3>
+        <div class="theory-block">
+          <h4>Теория</h4>
+          <p>Для отображения табличных данных в Avalonia используется элемент <code>DataGrid</code>. Согласно паттерну MVVM (Model-View-ViewModel), данные привязываются к свойству <code>ObservableCollection</code> во ViewModel. Это позволяет таблице автоматически обновляться при добавлении или удалении записей.</p>
+        </div>
+        <div class="practice-block">
+          <h4>Практическое задание</h4>
+          <p>Напишите C# код ViewModel, который загружает список сотрудников из БД и сохраняет его в <code>ObservableCollection</code>.</p>
+          <textarea data-progress-id="m3t2_text" placeholder="public ObservableCollection<Employee> Employees { get; set; }"></textarea>
+        </div>
+      </div>
+
+      <!-- Тема 3.3 -->
+      <div class="card">
+        <h3>Тема 3.3. Реализация CRUD-операций</h3>
+        <div class="theory-block">
+          <h4>Теория</h4>
+          <p>CRUD (Create, Read, Update, Delete) — базовые операции. В Avalonia UI действия пользователя (нажатие кнопок) привязываются к командам (ICommand) во ViewModel. При добавлении или удалении объекта в контексте EF Core необходимо вызвать метод <code>SaveChangesAsync()</code>, чтобы отправить изменения в Firebird.</p>
+        </div>
+        <div class="practice-block">
+          <h4>Практическое задание</h4>
+          <p>Напишите метод для удаления выбранной записи из БД. Вставьте код ниже.</p>
+          <textarea data-progress-id="m3t3_text" placeholder="db.Employees.Remove(selected); await db.SaveChangesAsync();"></textarea>
+        </div>
+      </div>
+
+      <h2>Самопроверка</h2>
+      <ul class="checklist">
+        <li><input type="checkbox" data-progress-id="m3t1_text"><span>XAML для входа написан</span></li>
+        <li><input type="checkbox" data-progress-id="m3t1_file"><span>Скриншот окна загружен</span></li>
+        <li><input type="checkbox" data-progress-id="m3t2_text"><span>ViewModel написан</span></li>
+        <li><input type="checkbox" data-progress-id="m3t3_text"><span>Метод удаления написан</span></li>
+      </ul>
+
+      <!-- БЛОК С КНОПКАМИ ДЕЙСТВИЙ -->
+      <div class="action-bar">
+        <button type="button" class="btn" id="btnSave">Сохранить</button>
+        <button type="button" class="btn" id="btnPrint">Печать / PDF</button>
+        <button type="button" class="btn" id="btnExport">Экспорт JSON</button>
+        <button type="button" class="btn btn--outline" id="btnReset">Сбросить данные</button>
+      </div>
+
+      <div class="btn-group">
+        <a href="module2.html" class="btn btn--secondary">← Модуль 2</a>
+        <a href="module4.html" class="btn">Модуль 4 →</a>
+      </div>
+    </main>
+    <footer class="footer">
+      Электронная рабочая тетрадь · 2026<br>
+      <span class="author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</span>
+    </footer>
+  </div>
+  <script src="../js/storage.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

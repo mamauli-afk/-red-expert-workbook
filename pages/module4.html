@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Модуль 4 · Отчёты</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div>
+        <h1 class="header__title">ЭРТ: Модуль 4</h1>
+        <div class="header__subtitle">Печать отчётов и экспорт данных</div>
+        <div class="header__author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</div>
+      </div>
+      <div class="header__progress">Прогресс: <span id="progressValue">0%</span></div>
+    </header>
+    <aside class="sidebar" data-nav-root="../"></aside>
+    <main class="main">
+      <div class="breadcrumbs"><a href="../index.html">Главная</a><span>›</span>Модуль 4</div>
+
+      <div class="card card--highlight">
+        <h2>Цель модуля</h2>
+        <p>Научиться формировать и выводить на печать отчёты на основе данных из приложения.</p>
+      </div>
+
+      <h2>Теория и практика</h2>
+
+      <!-- Тема 4.1 -->
+      <div class="card">
+        <h3>Тема 4.1. Обзор библиотек для генерации отчётов</h3>
+        <div class="theory-block">
+          <h4>Теория</h4>
+          <p>В Avalonia UI можно использовать встроенный интерфейс <code>IPrintService</code> для вывода визуальных элементов на печать, либо сторонние библиотеки (например, FastReport.Avalonia, QuestPDF) для генерации PDF-документов. Для сложных табличных отчётов чаще выбирают генерацию PDF с последующей отправкой на печать.</p>
+        </div>
+        <div class="practice-block">
+          <h4>Практическое задание</h4>
+          <p>Какой подход к генерации отчётов вы выбрали для своего проекта и почему? Опишите ваш выбор.</p>
+          <textarea data-progress-id="m4t1_text" placeholder="Я выбрал библиотеку X, потому что..."></textarea>
+        </div>
+      </div>
+
+      <!-- Тема 4.2 -->
+      <div class="card">
+        <h3>Тема 4.2. Формирование отчёта</h3>
+        <div class="theory-block">
+          <h4>Теория</h4>
+          <p>Процесс формирования отчёта включает выборку данных из Firebird (например, список сотрудников по отделам) и их компоновку в макет документа. Если вы используете PDF-генератор, вы описываете структуру таблицы, заголовки и стили в коде, после чего на выходе получаете готовый файл.</p>
+        </div>
+        <div class="practice-block">
+          <h4>Практическое задание</h4>
+          <p>Сгенерируйте тестовый PDF-отчёт со списком сотрудников. Загрузите скриншот полученного документа или напишите код, который вы использовали для его создания.</p>
+          <textarea data-progress-id="m4t2_text" placeholder="// Код генерации PDF..."></textarea>
+          <div class="file-upload-wrapper" style="margin-top:1rem;">
+            <label class="file-upload-label">
+              📎 Скриншот PDF
+              <input type="file" class="file-upload-input" accept="image/*" data-progress-id="m4t2_file">
+            </label>
+            <span id="status_m4t2_file" style="font-size:0.9rem; color:var(--blue-700);">Файл не выбран</span>
+          </div>
+          <img id="preview_m4t2_file" class="preview-img" alt="Превью">
+        </div>
+      </div>
+
+      <!-- Тема 4.3 -->
+      <div class="card">
+        <h3>Тема 4.3. Вывод на печать</h3>
+        <div class="theory-block">
+          <h4>Теория</h4>
+          <p>Для вывода на печать в Avalonia используется сервис <code>IPrintService</code>. Метод <code>PrintAsync()</code> открывает системный диалог печати, позволяя пользователю выбрать принтер. Если вы печатаете PDF, можно использовать системные вызовы ОС для открытия файла в программе просмотра.</p>
+        </div>
+        <div class="practice-block">
+          <h4>Практическое задание</h4>
+          <p>Напишите код, который вызывает диалог печати (или открывает PDF-файл) по нажатию на кнопку.</p>
+          <textarea data-progress-id="m4t3_text" placeholder="await printService.PrintAsync(&quot;Отчет&quot;);"></textarea>
+        </div>
+      </div>
+
+      <h2>Самопроверка</h2>
+      <ul class="checklist">
+        <li><input type="checkbox" data-progress-id="m4t1_text"><span>Выбор библиотеки обоснован</span></li>
+        <li><input type="checkbox" data-progress-id="m4t2_text"><span>Код отчёта написан</span></li>
+        <li><input type="checkbox" data-progress-id="m4t2_file"><span>Скриншот отчёта загружен</span></li>
+        <li><input type="checkbox" data-progress-id="m4t3_text"><span>Код печати написан</span></li>
+      </ul>
+
+      <!-- БЛОК С КНОПКАМИ ДЕЙСТВИЙ -->
+      <div class="action-bar">
+        <button type="button" class="btn" id="btnSave">Сохранить</button>
+        <button type="button" class="btn" id="btnPrint">Печать / PDF</button>
+        <button type="button" class="btn" id="btnExport">Экспорт JSON</button>
+        <button type="button" class="btn btn--outline" id="btnReset">Сбросить данные</button>
+      </div>
+
+      <div class="btn-group">
+        <a href="module3.html" class="btn btn--secondary">← Модуль 3</a>
+        <a href="control.html" class="btn">Контрольный модуль →</a>
+      </div>
+    </main>
+    <footer class="footer">
+      Электронная рабочая тетрадь · 2026<br>
+      <span class="author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</span>
+    </footer>
+  </div>
+  <script src="../js/storage.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЭРТ · Red Expert + Avalonia</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div>
+        <h1 class="header__title">ЭРТ по Red Expert + Avalonia</h1>
+        <div class="header__subtitle">Полный цикл работы с данными (Firebird)</div>
+        <div class="header__author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</div>
+      </div>
+      <div class="header__progress">Прогресс: <span id="progressValue">0%</span></div>
+    </header>
+
+    <aside class="sidebar" data-nav-root=""></aside>
+
+    <main class="main">
+      <div class="card card--highlight">
+        <h1>Электронная рабочая тетрадь</h1>
+        <p>Практикум по полному циклу разработки: проектирование БД <strong>Firebird</strong> в <strong>Red Expert</strong>, интеграция с <strong>Avalonia UI</strong> на C#, авторизация, CRUD и печать отчётов.</p>
+        <div class="progress-bar"><div class="progress-bar__fill" data-total="20"></div></div>
+        
+      
+        <div style="margin-top: 1.5rem;">
+          <a href="pages/instruction.html" class="btn btn--outline">Как работать с тетрадью</a>
+        </div>
+        
+      </div>
+      <h2>Модули</h2>
+      <div class="grid-cards">
+        <a href="pages/module1.html" class="module-card" style="text-decoration:none">
+          <span class="module-card__num">Модуль 1</span>
+          <h3>Проектирование БД в Red Expert</h3>
+          <p>Интерфейс, подключение к Firebird, создание .fdb-файла, визуальная схема, редактор запросов.</p>
+        </a>
+        <a href="pages/module2.html" class="module-card" style="text-decoration:none">
+          <span class="module-card__num">Модуль 2</span>
+          <h3>Интеграция Avalonia UI с Firebird</h3>
+          <p>NuGet-пакеты Firebird, строка подключения, scaffolding моделей через EF Core.</p>
+        </a>
+        <a href="pages/module3.html" class="module-card" style="text-decoration:none">
+          <span class="module-card__num">Модуль 3</span>
+          <h3>Авторизация и работа с данными</h3>
+          <p>Окно входа, DataGrid, MVVM, добавление и удаление записей.</p>
+        </a>
+        <a href="pages/module4.html" class="module-card" style="text-decoration:none">
+          <span class="module-card__num">Модуль 4</span>
+          <h3>Печать отчётов и экспорт</h3>
+          <p>Обзор библиотек, генерация PDF, вывод на печать.</p>
+        </a>
+        <a href="pages/control.html" class="module-card" style="text-decoration:none;border-top-color:var(--blue-800)">
+          <span class="module-card__num">Контроль</span>
+          <h3>Итоговый тест и комплексное задание</h3>
+          <p>Проверка знаний и разработка приложения «Телефонный справочник».</p>
+        </a>
+      </div>
+
+      <h2>Приложения</h2>
+      <div class="grid-cards">
+        <a href="pages/appendices/appendix-a.html" class="module-card"><h3>А. Глоссарий</h3></a>
+        <a href="pages/appendices/appendix-b.html" class="module-card"><h3>Б. SQL и C#</h3></a>
+        <a href="pages/appendices/appendix-c.html" class="module-card"><h3>В. Настройка окружения</h3></a>
+        <a href="pages/appendices/appendix-d.html" class="module-card"><h3>Г. Примеры кода</h3></a>
+        <a href="pages/appendices/appendix-e.html" class="module-card"><h3>Д. Литература</h3></a>
+        <a href="pages/appendices/appendix-f.html" class="module-card"><h3>Е. Критерии оценивания</h3></a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      Электронная рабочая тетрадь · 2026<br>
+      <span class="author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</span>
+    </footer>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

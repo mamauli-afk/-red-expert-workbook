@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Приложение А · Глоссарий</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/print.css">
+  <style>
+    .glossary-nav {
+      background: var(--white);
+      border: 1px solid var(--blue-200);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .glossary-nav__title {
+      font-size: .78rem; text-transform: uppercase; letter-spacing: .5px;
+      color: var(--blue-700); font-weight: 700; margin-bottom: .6rem;
+    }
+    .glossary-nav__list {
+      list-style: none; margin: 0; padding: 0;
+      display: flex; flex-wrap: wrap; gap: .5rem;
+    }
+    .glossary-nav__link {
+      display: inline-block; padding: .35em .8em;
+      background: var(--blue-50); color: var(--blue-800);
+      border: 1px solid var(--blue-200); border-radius: 20px;
+      font-size: .85rem; transition: all .2s;
+    }
+    .glossary-nav__link:hover {
+      background: var(--blue-600); color: #fff;
+      border-color: var(--blue-600); text-decoration: none;
+    }
+    .term-card {
+      background: #fff; border-left: 4px solid var(--blue-500);
+      border-radius: var(--radius); padding: 1rem 1.25rem;
+      margin-bottom: 1rem; box-shadow: var(--shadow); scroll-margin-top: 1rem;
+    }
+    .term-card__title { color: var(--blue-800); margin: 0 0 .4rem 0; font-size: 1.15rem; }
+    .term-card__text { margin: 0 0 .6rem 0; color: var(--gray-700); }
+    .term-card__back { font-size: .8rem; color: var(--blue-600); }
+    .term-card__back:hover { color: var(--blue-800); }
+  </style>
+</head>
+<body>
+  <div class="app">
+       <header class="header">
+      <div>
+        <h1 class="header__title">Приложение А</h1>
+        <div class="header__subtitle">Глоссарий</div>
+        <div class="header__author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</div>
+      </div>
+      <div class="header__progress">Прогресс: <span id="progressValue">0%</span></div>
+    </header>
+
+    <aside class="sidebar" data-nav-root="../../"></aside>
+
+    <main class="main">
+      <div class="breadcrumbs"><a href="../../index.html">Главная</a><span>›</span>Приложение А</div>
+
+      <h2>Глоссарий</h2>
+
+      <nav class="glossary-nav" id="glossaryTop">
+        <div class="glossary-nav__title">Перейти к термину</div>
+        <ul class="glossary-nav__list">
+          <li><a class="glossary-nav__link" href="#term-red-expert">Red Expert</a></li>
+          <li><a class="glossary-nav__link" href="#term-firebird">Firebird</a></li>
+          <li><a class="glossary-nav__link" href="#term-fdb">.fdb</a></li>
+          <li><a class="glossary-nav__link" href="#term-sysdba">SYSDBA</a></li>
+          <li><a class="glossary-nav__link" href="#term-fbconnection">FbConnection</a></li>
+          <li><a class="glossary-nav__link" href="#term-avalonia">Avalonia UI</a></li>
+          <li><a class="glossary-nav__link" href="#term-mvvm">MVVM</a></li>
+          <li><a class="glossary-nav__link" href="#term-datagrid">DataGrid</a></li>
+          <li><a class="glossary-nav__link" href="#term-efcore">EF Core</a></li>
+          <li><a class="glossary-nav__link" href="#term-crud">CRUD</a></li>
+          <li><a class="glossary-nav__link" href="#term-iprintservice">IPrintService</a></li>
+          <li><a class="glossary-nav__link" href="#term-scaffolding">Scaffolding</a></li>
+          <li><a class="glossary-nav__link" href="#term-connection-string">Connection String</a></li>
+        </ul>
+      </nav>
+
+      <article class="term-card" id="term-red-expert">
+        <h3 class="term-card__title">Red Expert</h3>
+        <p class="term-card__text">GUI-инструмент для администрирования и разработки баз данных Firebird (а также других СУБД): подключение, редактор схем, SQL-редактор, создание БД и объектов.</p>
+        <a class="term-card__back" href="#glossaryTop">↑ к оглавлению</a>
+      </article>
+
+      <article class="term-card" id="term-firebird">
+        <h3 class="term-card__title">Firebird</h3>
+        <p class="term-card__text">Реляционная СУБД с открытым исходным кодом. Поддерживает SQL-диалект 3, хранимые процедуры, триггеры, генераторы (sequences). База данных хранится в одном файле <code>.fdb</code>.</p>
+        <a class="term-card__back" href="#glossaryTop">↑ к оглавлению</a>
+      </article>
+
+      <article class="term-card" id="term-fdb">
+        <h3 class="term-card__title">.fdb</h3>
+        <p class="term-card__text">Расширение файла базы данных Firebird. Файл размещается на сервере Firebird; приложение подключается к нему по сети (порт 3050) или локально через embedded-режим.</p>
+        <a class="term-card__back" href="#glossaryTop">↑ к оглавлению</a>
+      </article>
+
+      <article class="term-card" id="term-sysdba">
+        <h3 class="term-card__title">SYSDBA</h3>
+        <p class="term-card__text">Встроенная учётная запись администратора Firebird с максимальными правами. Пароль по умолчанию в учебных установках — <code>masterkey</code>; в реальных проектах его обязательно меняют.</p>
+        <a class="term-card__back" href="#glossaryTop">↑ к оглавлению</a>
+      </article>
+
+      <article class="term-card" id="term-fbconnection">
+        <h3 class="term-card__title">FbConnection</h3>
+        <p class="term-card__text">Класс ADO.NET-драйвера <code>FirebirdSql.Data.FirebirdClient</code> для установления соединения с Firebird. Аналог <code>SqlConnection</code> / <code>NpgsqlConnection</code>.</p>
+        <a class="term-card__back" href="#glossaryTop">↑ к оглавлению</a>
+      </article>
+
+      <article class="term-card" id="term-avalonia">
+        <h3 class="term-card__title">Avalonia UI</h3>
+        <p class="term-card__text">Кроссплатформенный UI-фреймворк для .NET с поддержкой XAML.</p>
+        <a class="term-card__back" href="#glossaryTop">↑ к оглавлению</a>
+      </article>
+
+      <article class="term-card" id="term-mvvm">
+        <h3 class="term-card__title">MVVM</h3>
+        <p class="term-card__text">Паттерн Model-View-ViewModel, разделяющий логику и представление.</p>
+        <a class="term-card__back" href="#glossaryTop">↑ к оглавлению</a>
+      </article>
+
+      <article class="term-card" id="term-datagrid">
+        <h3 class="term-card__title">DataGrid</h3>
+        <p class="term-card__text">Элемент управления для отображения табличных данных.</p>
+        <a class="term-card__back" href="#glossaryTop">↑ к оглавлению</a>
+      </article>
+
+      <article class="term-card" id="term-efcore">
+        <h3 class="term-card__title">EF Core</h3>
+        <p class="term-card__text">ORM от Microsoft для работы с БД через объекты C#. Для Firebird используется провайдер <code>FirebirdSql.EntityFrameworkCore.Firebird</code>.</p>
+        <a class="term-card__back" href="#glossaryTop">↑ к оглавлению</a>
+      </article>
+
+      <article class="term-card" id="term-crud">
+        <h3 class="term-card__title">CRUD</h3>
+        <p class="term-card__text">Create, Read, Update, Delete — базовые операции над данными.</p>
+        <a class="term-card__back" href="#glossaryTop">↑ к оглавлению</a>
+      </article>
+
+      <article class="term-card" id="term-iprintservice">
+        <h3 class="term-card__title">IPrintService</h3>
+        <p class="term-card__text">Интерфейс Avalonia для интеграции с системной печатью.</p>
+        <a class="term-card__back" href="#glossaryTop">↑ к оглавлению</a>
+      </article>
+
+      <article class="term-card" id="term-scaffolding">
+        <h3 class="term-card__title">Scaffolding</h3>
+        <p class="term-card__text">Автоматическая генерация классов сущностей и DbContext по существующей схеме БД (команда <code>dotnet ef dbcontext scaffold</code> с указанием провайдера Firebird).</p>
+        <a class="term-card__back" href="#glossaryTop">↑ к оглавлению</a>
+      </article>
+
+      <article class="term-card" id="term-connection-string">
+        <h3 class="term-card__title">Connection String</h3>
+        <p class="term-card__text">Строка подключения — набор параметров (DataSource, Port, Database, Username, Password, Charset), используемый для соединения с Firebird.</p>
+        <a class="term-card__back" href="#glossaryTop">↑ к оглавлению</a>
+      </article>
+
+      <div class="btn-group">
+        <a href="../../index.html" class="btn btn--secondary">← На главную</a>
+        <a href="appendix-b.html" class="btn">Б. SQL и C# →</a>
+      </div>
+    </main>
+
+      <footer class="footer">
+      Электронная рабочая тетрадь · 2026<br>
+      <span class="author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</span>
+    </footer>
+  </div>
+
+  <script src="../../js/storage.js"></script>
+  <script src="../../js/navigation.js"></script>
+  <script src="../../js/main.js"></script>
+</body>
+</html>

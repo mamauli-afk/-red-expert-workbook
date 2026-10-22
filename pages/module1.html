@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Модуль 1 · Red Expert (Firebird)</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div>
+        <h1 class="header__title">ЭРТ: Модуль 1</h1>
+        <div class="header__subtitle">Проектирование базы данных Firebird в Red Expert</div>
+        <div class="header__author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</div>
+      </div>
+      <div class="header__progress">Прогресс: <span id="progressValue">0%</span></div>
+    </header>
+
+    <aside class="sidebar" data-nav-root="../"></aside>
+
+    <main class="main">
+      <div class="breadcrumbs">
+        <a href="../index.html">Главная</a><span>›</span>Модуль 1
+      </div>
+
+      <div class="card card--highlight">
+        <h2>Цель модуля</h2>
+        <p>Освоить визуальное проектирование и создание базы данных <strong>Firebird</strong> с помощью GUI-инструмента Red Expert.</p>
+      </div>
+
+      <h2>Теория и практика</h2>
+
+      <!-- Тема 1.1 -->
+      <div class="card">
+        <h3>Тема 1.1. Введение в Red Expert</h3>
+        <div class="theory-block">
+          <h4>Теория</h4>
+          <p><strong>Red Expert</strong> — это бесплатный кроссплатформенный инструмент для администрирования и разработки баз данных, отлично поддерживающий Firebird. Интерфейс состоит из панели инструментов, браузера баз данных (слева) и рабочей области. В браузере отображается структура подключенных БД: таблицы, представления, триггеры, генераторы и хранимые процедуры.</p>
+        </div>
+        <div class="practice-block">
+          <h4>Практическое задание</h4>
+          <p>Запустите Red Expert, создайте новое подключение и откройте браузер базы данных. Сделайте скриншот главного окна Red Expert и прикрепите его ниже.</p>
+          <div class="file-upload-wrapper">
+            <label class="file-upload-label">
+              📎 Выбрать скриншот
+              <input type="file" class="file-upload-input" accept="image/*" data-progress-id="m1t1_file">
+            </label>
+            <span id="status_m1t1_file" style="font-size:0.9rem; color:var(--blue-700);">Файл не выбран</span>
+          </div>
+          <img id="preview_m1t1_file" class="preview-img" alt="Превью">
+        </div>
+      </div>
+
+      <!-- Тема 1.2 -->
+      <div class="card">
+        <h3>Тема 1.2. Создание и настройка подключения</h3>
+        <div class="theory-block">
+          <h4>Теория</h4>
+          <p>Для подключения к Firebird в Red Expert необходимо указать параметры сети и аутентификации. Стандартный порт Firebird — <code>3050</code>. В качестве пути к базе данных указывается путь к файлу <code>.fdb</code> (например, <code>localhost:C:\db\test.fdb</code>). Учётная запись администратора по умолчанию — <code>SYSDBA</code>, пароль — <code>masterkey</code>.</p>
+        </div>
+        <div class="practice-block">
+          <h4>Практическое задание</h4>
+          <p>Создайте новое подключение к локальному серверу Firebird. Напишите в поле ниже строку подключения, которую вы использовали (или сформировали) для соединения.</p>
+          <textarea data-progress-id="m1t2_text" placeholder="Например: localhost/3050:C:\db\employees.fdb, SYSDBA/masterkey"></textarea>
+        </div>
+      </div>
+
+      <!-- Тема 1.3 -->
+      <div class="card">
+        <h3>Тема 1.3. Создание базы данных и таблиц</h3>
+        <div class="theory-block">
+          <h4>Теория</h4>
+          <p>В отличие от клиент-серверных СУБД (как PostgreSQL), база данных Firebird — это физический файл с расширением <code>.fdb</code>. Вы можете создать его через Red Expert. Для создания таблиц используется визуальный редактор или SQL-скрипты. Первичные ключи (PK) и внешние ключи (FK) настраиваются для обеспечения целостности данных. Для автоинкремента в Firebird используются <strong>генераторы</strong> (sequences) и триггеры.</p>
+        </div>
+        <div class="practice-block">
+          <h4>Практическое задание</h4>
+          <p>Создайте файл базы данных <code>employees.fdb</code> и таблицу <code>Departments</code> (поля: <code>ID</code> (PK), <code>Name</code>). Напишите SQL-код (DDL), который вы использовали для создания таблицы.</p>
+          <textarea data-progress-id="m1t3_text" placeholder="CREATE TABLE Departments (...);"></textarea>
+        </div>
+      </div>
+
+      <!-- Тема 1.4 -->
+      <div class="card">
+        <h3>Тема 1.4. Редактор запросов</h3>
+        <div class="theory-block">
+          <h4>Теория</h4>
+          <p>Встроенный редактор запросов Red Expert позволяет выполнять SQL-скрипты (диалект 3), подсвечивает синтаксис и хранит историю выполненных операций. Результаты выборки (SELECT) можно экспортировать в CSV или Excel. Все изменения в БД (INSERT, UPDATE, DELETE) применяются после фиксации транзакции (Commit).</p>
+        </div>
+        <div class="practice-block">
+          <h4>Практическое задание</h4>
+          <p>Откройте редактор запросов. Напишите и выполните <code>INSERT</code> запрос, добавляющий запись в таблицу <code>Departments</code>. Напишите код, который вы выполнили.</p>
+          <textarea data-progress-id="m1t4_text" placeholder="INSERT INTO Departments (ID, Name) VALUES (1, 'IT');"></textarea>
+        </div>
+      </div>
+
+      <h2>Самопроверка</h2>
+      <ul class="checklist">
+        <li><input type="checkbox" data-progress-id="m1t1_file"><span>Скриншот интерфейса загружен</span></li>
+        <li><input type="checkbox" data-progress-id="m1t2_text"><span>Строка подключения записана</span></li>
+        <li><input type="checkbox" data-progress-id="m1t3_text"><span>SQL для создания таблицы написан</span></li>
+        <li><input type="checkbox" data-progress-id="m1t4_text"><span>INSERT запрос выполнен</span></li>
+      </ul>
+
+      <!-- БЛОК С КНОПКАМИ ДЕЙСТВИЙ -->
+      <div class="action-bar">
+        <button type="button" class="btn" id="btnSave">Сохранить</button>
+        <button type="button" class="btn" id="btnPrint">Печать / PDF</button>
+        <button type="button" class="btn" id="btnExport">Экспорт JSON</button>
+        <button type="button" class="btn btn--outline" id="btnReset">Сбросить данные</button>
+      </div>
+
+      <!-- Кнопки перехода по модулям -->
+      <div class="btn-group">
+        <a href="../index.html" class="btn btn--secondary">← Главная</a>
+        <a href="module2.html" class="btn">Следующий модуль →</a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      Электронная рабочая тетрадь · 2026<br>
+      <span class="author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</span>
+    </footer>
+  </div>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

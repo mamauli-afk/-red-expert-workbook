@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контрольный модуль</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div>
+        <h1 class="header__title">ЭРТ: Контрольный модуль</h1>
+        <div class="header__subtitle">Итоговый тест и комплексное задание</div>
+        <div class="header__author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</div>
+      </div>
+      <div class="header__progress">Прогресс: <span id="progressValue">0%</span></div>
+    </header>
+    <aside class="sidebar" data-nav-root="../"></aside>
+    <main class="main">
+      <div class="breadcrumbs"><a href="../index.html">Главная</a><span>›</span>Контроль</div>
+
+      <div class="card card--highlight">
+        <h2>Итоговый тест</h2>
+        <p>Ответьте на 15 вопросов. Проходной балл — 70% (11 правильных ответов).</p>
+      </div>
+
+      <form id="quizForm">
+        <!-- Вопрос 1 -->
+        <div class="quiz-question" data-correct="b">
+          <h4>1. Какой инструмент используется для визуального проектирования БД Firebird?</h4>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q1" value="a"> SSMS</label></li>
+            <li><label><input type="radio" name="q1" value="b"> Red Expert</label></li>
+            <li><label><input type="radio" name="q1" value="c"> DBeaver</label></li>
+          </ul>
+        </div>
+
+        <!-- Вопрос 2 -->
+        <div class="quiz-question" data-correct="c">
+          <h4>2. Какой пакет обеспечивает работу с Firebird в EF Core?</h4>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q2" value="a"> Microsoft.Data.SqlClient</label></li>
+            <li><label><input type="radio" name="q2" value="b"> Npgsql.EntityFrameworkCore.PostgreSQL</label></li>
+            <li><label><input type="radio" name="q2" value="c"> FirebirdSql.EntityFrameworkCore.Firebird</label></li>
+          </ul>
+        </div>
+
+        <!-- Вопрос 3 -->
+        <div class="quiz-question" data-correct="a">
+          <h4>3. Какой паттерн используется для привязки данных в Avalonia?</h4>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q3" value="a"> MVVM</label></li>
+            <li><label><input type="radio" name="q3" value="b"> MVC</label></li>
+            <li><label><input type="radio" name="q3" value="c"> MVP</label></li>
+          </ul>
+        </div>
+
+        <!-- Вопрос 4 -->
+        <div class="quiz-question" data-correct="b">
+          <h4>4. Что означает аббревиатура CRUD?</h4>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q4" value="a"> Create, Read, Undo, Delete</label></li>
+            <li><label><input type="radio" name="q4" value="b"> Create, Read, Update, Delete</label></li>
+            <li><label><input type="radio" name="q4" value="c"> Copy, Read, Update, Drop</label></li>
+          </ul>
+        </div>
+
+        <!-- Вопрос 5 -->
+        <div class="quiz-question" data-correct="c">
+          <h4>5. Какой метод вызывается для печати в Avalonia?</h4>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q5" value="a"> Print()</label></li>
+            <li><label><input type="radio" name="q5" value="b"> SendToPrinter()</label></li>
+            <li><label><input type="radio" name="q5" value="c"> PrintAsync()</label></li>
+          </ul>
+        </div>
+
+        <!-- Вопрос 6 -->
+        <div class="quiz-question" data-correct="b">
+          <h4>6. Каков порт по умолчанию у сервера Firebird?</h4>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q6" value="a"> 5432</label></li>
+            <li><label><input type="radio" name="q6" value="b"> 3050</label></li>
+            <li><label><input type="radio" name="q6" value="c"> 1433</label></li>
+          </ul>
+        </div>
+
+        <!-- Вопрос 7 -->
+        <div class="quiz-question" data-correct="a">
+          <h4>7. Какое расширение имеет файл базы данных Firebird?</h4>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q7" value="a"> .fdb</label></li>
+            <li><label><input type="radio" name="q7" value="b"> .mdf</label></li>
+            <li><label><input type="radio" name="q7" value="c"> .db</label></li>
+          </ul>
+        </div>
+
+        <!-- Вопрос 8 -->
+        <div class="quiz-question" data-correct="c">
+          <h4>8. Какой класс используется в C# (ADO.NET) для прямого подключения к Firebird?</h4>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q8" value="a"> SqlConnection</label></li>
+            <li><label><input type="radio" name="q8" value="b"> NpgsqlConnection</label></li>
+            <li><label><input type="radio" name="q8" value="c"> FbConnection</label></li>
+          </ul>
+        </div>
+
+        <!-- Вопрос 9 -->
+        <div class="quiz-question" data-correct="b">
+          <h4>9. Какая команда создает проект Avalonia с готовой структурой папок для паттерна MVVM?</h4>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q9" value="a"> dotnet new avalonia.app</label></li>
+            <li><label><input type="radio" name="q9" value="b"> dotnet new avalonia.mvvm</label></li>
+            <li><label><input type="radio" name="q9" value="c"> dotnet new avalonia.xaml</label></li>
+          </ul>
+        </div>
+
+        <!-- Вопрос 10 -->
+        <div class="quiz-question" data-correct="a">
+          <h4>10. Какая коллекция в C# используется для автоматического обновления UI при добавлении/удалении элементов?</h4>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q10" value="a"> ObservableCollection</label></li>
+            <li><label><input type="radio" name="q10" value="b"> List</label></li>
+            <li><label><input type="radio" name="q10" value="c"> Dictionary</label></li>
+          </ul>
+        </div>
+
+        <!-- Вопрос 11 -->
+        <div class="quiz-question" data-correct="c">
+          <h4>11. Какой элемент управления в Avalonia используется для отображения табличных данных?</h4>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q11" value="a"> ListBox</label></li>
+            <li><label><input type="radio" name="q11" value="b"> TableView</label></li>
+            <li><label><input type="radio" name="q11" value="c"> DataGrid</label></li>
+          </ul>
+        </div>
+
+        <!-- Вопрос 12 -->
+        <div class="quiz-question" data-correct="b">
+          <h4>12. Какой метод в Entity Framework Core сохраняет все изменения в базу данных?</h4>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q12" value="a"> Commit()</label></li>
+            <li><label><input type="radio" name="q12" value="b"> SaveChangesAsync()</label></li>
+            <li><label><input type="radio" name="q12" value="c"> UpdateDatabase()</label></li>
+          </ul>
+        </div>
+
+        <!-- Вопрос 13 -->
+        <div class="quiz-question" data-correct="a">
+          <h4>13. Какая утилита (команда) используется для генерации C#-классов на основе уже существующей БД?</h4>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q13" value="a"> dotnet ef dbcontext scaffold</label></li>
+            <li><label><input type="radio" name="q13" value="b"> dotnet new model</label></li>
+            <li><label><input type="radio" name="q13" value="c"> dotnet ef database update</label></li>
+          </ul>
+        </div>
+
+        <!-- Вопрос 14 -->
+        <div class="quiz-question" data-correct="c">
+          <h4>14. Какой логин администратора используется в Firebird по умолчанию?</h4>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q14" value="a"> root</label></li>
+            <li><label><input type="radio" name="q14" value="b"> postgres</label></li>
+            <li><label><input type="radio" name="q14" value="c"> SYSDBA</label></li>
+          </ul>
+        </div>
+
+        <!-- Вопрос 15 -->
+        <div class="quiz-question" data-correct="b">
+          <h4>15. Для чего в Firebird используются генераторы (sequences)?</h4>
+          <ul class="quiz-options">
+            <li><label><input type="radio" name="q15" value="a"> Для создания резервных копий</label></li>
+            <li><label><input type="radio" name="q15" value="b"> Для генерации уникальных автоинкрементных значений (ID)</label></li>
+            <li><label><input type="radio" name="q15" value="c"> Для ускорения выполнения SELECT-запросов</label></li>
+          </ul>
+        </div>
+
+        <div class="btn-group">
+          <button type="submit" class="btn">Проверить результат</button>
+        </div>
+        <p id="quizResult" style="margin-top:1rem;font-weight:700"></p>
+      </form>
+
+      <div class="practice-box">
+        <h3>Комплексное практическое задание</h3>
+        <p>Разработать мини-приложение «Телефонный справочник» с нуля на Firebird:</p>
+        <ol>
+          <li>Создать БД <code>contacts.fdb</code> в Red Expert (таблицы <code>Contacts</code>, <code>Groups</code>).</li>
+          <li>Подключить БД из Avalonia-проекта через Firebird EF Core Provider.</li>
+          <li>Реализовать окно авторизации.</li>
+          <li>Вывести список контактов в DataGrid.</li>
+          <li>Реализовать печать списка контактов.</li>
+        </ol>
+      </div>
+
+      <!-- БЛОК С КНОПКАМИ ДЕЙСТВИЙ -->
+      <div class="action-bar">
+        <button type="button" class="btn" id="btnSave">Сохранить</button>
+        <button type="button" class="btn" id="btnPrint">Печать / PDF</button>
+        <button type="button" class="btn" id="btnExport">Экспорт JSON</button>
+        <button type="button" class="btn btn--outline" id="btnReset">Сбросить данные</button>
+      </div>
+
+      <div class="btn-group">
+        <a href="module4.html" class="btn btn--secondary">← Модуль 4</a>
+        <a href="../index.html" class="btn">На главную</a>
+      </div>
+    </main>
+    <footer class="footer">
+      Электронная рабочая тетрадь · 2026<br>
+      <span class="author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</span>
+    </footer>
+  </div>
+  <script src="../js/storage.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/quiz.js"></script>
+</body>
+</html>

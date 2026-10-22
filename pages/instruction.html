@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЭРТ · Инструкция</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div>
+        <h1 class="header__title">ЭРТ: Инструкция</h1>
+        <div class="header__subtitle">Как работать с тетрадью</div>
+        <div class="header__author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</div>
+      </div>
+      <div class="header__progress">Прогресс: <span id="progressValue">0%</span></div>
+    </header>
+
+    <aside class="sidebar" data-nav-root="../"></aside>
+
+    <main class="main">
+      <div class="breadcrumbs">
+        <a href="../index.html">Главная</a><span>›</span>Инструкция
+      </div>
+
+      <div class="card card--highlight">
+        <h2>Инструкция по работе с тетрадью</h2>
+        <p>Прочитайте этот раздел перед началом работы. Здесь описано, как устроена электронная рабочая тетрадь, из каких модулей она состоит, как сохранять ответы и как сформировать итоговый отчёт для проверки.</p>
+      </div>
+
+      <!-- 1. Общая характеристика -->
+      <div class="card">
+        <h3>1. Общая характеристика</h3>
+        <ul>
+          <li><strong>Целевая аудитория:</strong> студенты IT-направлений, изучающие разработку десктопных приложений на C# (Avalonia) и работу с базами данных (Firebird).</li>
+          <li><strong>Формат:</strong> электронная тетрадь с полями для ответов, вставки скриншотов и автосохранением.</li>
+          <li><strong>Стек технологий:</strong> Red Expert, Firebird, C#, Avalonia UI, Entity Framework Core.</li>
+          <li><strong>Ключевой принцип:</strong> не менее 50–60% времени отводится на практическую работу непосредственно в VS Code и Red Expert.</li>
+        </ul>
+      </div>
+
+      <!-- 2. Структура и модули -->
+      <div class="card">
+        <h3>2. Структура и содержание модулей</h3>
+        <p>Тетрадь состоит из четырёх основных модулей, контрольного модуля и вспомогательных приложений:</p>
+        
+        <div class="theory-block">
+          <h4>Модуль 1. Проектирование базы данных в Red Expert</h4>
+          <p><strong>Цель:</strong> Освоить визуальное проектирование и создание схемы БД Firebird.</p>
+          <p><strong>Темы:</strong> Интерфейс Red Expert, создание подключения и файла БД, создание таблиц (PK, FK), редактор запросов.</p>
+          <p><strong>Практика:</strong> Создание схемы БД «Учёт сотрудников» (таблицы Employees, Departments, Positions).</p>
+        </div>
+
+        <div class="theory-block">
+          <h4>Модуль 2. Интеграция Avalonia UI с Firebird</h4>
+          <p><strong>Цель:</strong> Настроить взаимодействие приложения Avalonia с БД.</p>
+          <p><strong>Темы:</strong> Подготовка MVVM-проекта в VS Code, установка NuGet-пакетов Firebird, настройка строки подключения, Scaffolding (генерация моделей).</p>
+          <p><strong>Практика:</strong> Подключение к БД и генерация моделей Employee, Department, Position.</p>
+        </div>
+
+        <div class="theory-block">
+          <h4>Модуль 3. Авторизация и работа с данными на форме</h4>
+          <p><strong>Цель:</strong> Реализовать окно входа и интерфейс для просмотра/редактирования данных.</p>
+          <p><strong>Темы:</strong> Создание LoginWindow, вывод данных в DataGrid (MVVM), реализация CRUD-операций (добавление, удаление, сохранение).</p>
+          <p><strong>Практика:</strong> Создание окна авторизации и главного окна с таблицей сотрудников.</p>
+        </div>
+
+        <div class="theory-block">
+          <h4>Модуль 4. Печать отчётов и экспорт данных</h4>
+          <p><strong>Цель:</strong> Научиться формировать и выводить на печать отчёты.</p>
+          <p><strong>Темы:</strong> Обзор библиотек (IPrintService, FastReport), формирование макета отчёта, вызов системного диалога печати.</p>
+          <p><strong>Практика:</strong> Генерация PDF-отчёта «Список сотрудников» и его печать.</p>
+        </div>
+
+        <div class="theory-block" style="border-left-color: var(--blue-800);">
+          <h4>Контрольный модуль (Экзаменующий)</h4>
+          <p><strong>Цель:</strong> Проверка и закрепление полученных знаний.</p>
+          <p><strong>Содержание:</strong> Итоговый тест (15 вопросов) по всем темам, а также комплексное задание — разработка мини-приложения «Телефонный справочник» с нуля.</p>
+        </div>
+
+        <p><strong>Приложения (А–Е):</strong> Глоссарий, справочник по SQL и C#, инструкция по настройке окружения, примеры кода, литература и критерии оценивания.</p>
+      </div>
+
+      <!-- 3. Требования к рабочему месту -->
+      <div class="card">
+        <h3>3. Требования к рабочему месту</h3>
+        <p><strong>Программное обеспечение:</strong></p>
+        <ul>
+          <li>Red Expert и сервер Firebird (порт 3050).</li>
+          <li>VS Code с расширениями: C# Dev Kit, Avalonia for VS Code.</li>
+          <li>.NET SDK (версия 8.0 или новее).</li>
+          <li>Браузер с поддержкой localStorage (Chrome, Edge, Firefox, Яндекс).</li>
+        </ul>
+        <div class="practice-box" style="margin-bottom: 0;">
+          <p><strong>Важно!</strong> Все задания выполняются в одном браузере. Очистка кэша или режим инкогнито приведут к потере сохранённых ответов.</p>
+        </div>
+      </div>
+
+      <!-- 4. Как выполнять -->
+      <div class="card">
+        <h3>4. Как выполнять задания</h3>
+        <ol>
+          <li>Переходите последовательно от Модуля 1 к Модулю 4.</li>
+          <li>Перед заданием прочитайте блок «Теория», чтобы освежить знания.</li>
+          <li>Выполните действие в Red Expert или VS Code.</li>
+          <li>Запишите ответ в поле (текст, SQL-запрос, код C# или описание).</li>
+          <li>При необходимости прикрепите скриншот результата.</li>
+          <li>Поставьте галочку в чек-листе «Самопроверка» — прогресс обновится автоматически.</li>
+        </ol>
+      </div>
+
+      <!-- 5. Скриншоты -->
+      <div class="card">
+        <h3>5. Как прикреплять скриншоты</h3>
+        <ol>
+          <li>Сделайте скриншот (Win+Shift+S).</li>
+          <li>Сохраните файл в формате PNG или JPG.</li>
+          <li>В задании нажмите «Выбрать скриншот» и укажите файл.</li>
+          <li>Убедитесь, что картинка появилась под кнопкой.</li>
+        </ol>
+        <p><strong>Ограничение:</strong> размер файла — не более 250 КБ. Именуйте файлы по схеме <code>m1_t1.png</code> (модуль_тема).</p>
+      </div>
+
+      <!-- 6. Сохранение и экспорт -->
+      <div class="card">
+        <h3>6. Сохранение ответов и экспорт отчёта</h3>
+        <p>Тетрадь сохраняет текст и скриншоты <strong>автоматически</strong> в вашем браузере. Однако внизу каждой страницы есть панель кнопок:</p>
+        <ul>
+          <li><strong>Сохранить:</strong> фиксирует текущие данные.</li>
+          <li><strong>Печать / PDF:</strong> открывает диалог печати. Выберите «Сохранить как PDF», чтобы получить итоговый отчёт для отправки преподавателю. При печати меню и кнопки скрываются.</li>
+          <li><strong>Экспорт JSON:</strong> скачивает файл с вашими ответами (без скриншотов) в качестве резервной копии.</li>
+          <li><strong>Сбросить данные:</strong> полностью очищает ответы на текущей странице (используйте с осторожностью!).</li>
+        </ul>
+      </div>
+
+      <!-- 7. Правила оформления -->
+      <div class="card">
+        <h3>7. Правила оформления ответов</h3>
+        <ul>
+          <li>Текстовые ответы пишите кратко и по существу.</li>
+          <li>Ключевые слова SQL (SELECT, CREATE, INSERT) пишите заглавными буквами с отступами.</li>
+          <li>Код C# должен быть читаемым, с соблюдением отступов.</li>
+          <li>Скриншоты должны подтверждать выполнение задания.</li>
+        </ul>
+        <p><strong>Пример оформления SQL-ответа:</strong></p>
+        <pre><code>SELECT
+    e.ID,
+    e.FullName,
+    d.Name AS DepartmentName
+FROM Employees e
+JOIN Departments d ON e.DepartmentID = d.ID
+ORDER BY e.FullName;</code></pre>
+      </div>
+
+      <div class="action-bar">
+        <button type="button" class="btn" id="btnSave">Сохранить</button>
+        <button type="button" class="btn" id="btnPrint">Печать / PDF</button>
+        <button type="button" class="btn" id="btnExport">Экспорт JSON</button>
+        <button type="button" class="btn btn--outline" id="btnReset">Сбросить данные</button>
+      </div>
+
+      <div class="btn-group">
+        <a href="../index.html" class="btn btn--secondary">← На главную</a>
+        <a href="module1.html" class="btn">Начать обучение (Модуль 1) →</a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      Электронная рабочая тетрадь · 2026<br>
+      <span class="author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</span>
+    </footer>
+  </div>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

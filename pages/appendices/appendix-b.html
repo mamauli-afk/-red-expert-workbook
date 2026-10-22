@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Приложение Б · SQL и C#</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/print.css">
+</head>
+<body>
+  <div class="app">
+       <header class="header">
+      <div>
+        <h1 class="header__title">Приложение А</h1>
+        <div class="header__subtitle">Глоссарий</div>
+        <div class="header__author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</div>
+      </div>
+      <div class="header__progress">Прогресс: <span id="progressValue">0%</span></div>
+    </header>
+    <aside class="sidebar" data-nav-root="../../"></aside>
+    <main class="main">
+      <div class="breadcrumbs"><a href="../../index.html">Главная</a><span>›</span>Приложение Б</div>
+
+      <h2>Основные SQL-команды Firebird</h2>
+      <table class="info-table">
+        <tr><th>Команда</th><th>Назначение</th></tr>
+        <tr><td><code>CREATE DATABASE</code></td><td>Создание файла БД <code>.fdb</code></td></tr>
+        <tr><td><code>CREATE TABLE</code></td><td>Создание таблицы</td></tr>
+        <tr><td><code>INSERT INTO</code></td><td>Добавление записи</td></tr>
+        <tr><td><code>SELECT</code></td><td>Выборка данных</td></tr>
+        <tr><td><code>UPDATE</code></td><td>Обновление записи</td></tr>
+        <tr><td><code>DELETE</code></td><td>Удаление записи</td></tr>
+        <tr><td><code>CREATE GENERATOR</code></td><td>Создание генератора (аналог sequence)</td></tr>
+      </table>
+
+      <h2>C# — примеры</h2>
+      <pre><code>// LINQ-запрос через EF Core (провайдер Firebird)
+var employees = await db.Employees
+    .Where(e => e.DepartmentId == 1)
+    .ToListAsync();</code></pre>
+
+      <pre><code>// Асинхронное добавление
+db.Employees.Add(new Employee { Name = "Иван" });
+await db.SaveChangesAsync();</code></pre>
+
+      <pre><code>// Прямое подключение через ADO.NET
+using FirebirdSql.Data.FirebirdClient;
+
+var cs = "DataSource=localhost;Port=3050;Database=employees.fdb;" +
+         "Username=SYSDBA;Password=5;Charset=UTF8";
+await using var conn = new FbConnection(cs);
+await conn.OpenAsync();</code></pre>
+
+      <div class="btn-group">
+        <a href="appendix-a.html" class="btn btn--secondary">← А. Глоссарий</a>
+        <a href="appendix-c.html" class="btn">В. Окружение →</a>
+      </div>
+    </main>
+      <footer class="footer">
+      Электронная рабочая тетрадь · 2026<br>
+      <span class="author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</span>
+    </footer>
+  </div>
+  <script src="../../js/storage.js"></script>
+  <script src="../../js/navigation.js"></script>
+  <script src="../../js/main.js"></script>
+</body>
+</html>

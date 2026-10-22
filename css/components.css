@@ -1,0 +1,193 @@
+.card {
+  background: var(--white); border-radius: var(--radius-lg);
+  padding: 1.5rem; box-shadow: var(--shadow);
+  margin-bottom: 1.5rem; border: 1px solid var(--blue-100);
+}
+.card--highlight {
+  background: linear-gradient(135deg, var(--blue-50), var(--blue-100));
+  border-color: var(--blue-300);
+}
+.breadcrumbs { font-size: .85rem; color: var(--blue-700); margin-bottom: 1rem; }
+.breadcrumbs a { color: var(--blue-600); }
+.breadcrumbs span { margin: 0 .5em; color: var(--blue-400); }
+.btn {
+  display: inline-block; padding: .6em 1.4em;
+  background: var(--blue-600); color: #fff; border: none;
+  border-radius: var(--radius); cursor: pointer;
+  font-size: .95rem; transition: background .2s;
+  text-decoration: none;
+}
+.btn:hover { background: var(--blue-800); color: #fff; text-decoration: none; }
+.btn--secondary { background: var(--blue-100); color: var(--blue-800); }
+.btn--secondary:hover { background: var(--blue-200); color: var(--blue-900); }
+.btn-group { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.topics { list-style: none; margin: 0; padding: 0; }
+.topic {
+  display: block; padding: .75rem 1rem;
+  background: var(--blue-50); border-left: 3px solid var(--blue-400);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin-bottom: .5rem; color: var(--gray-700); transition: all .2s;
+}
+.topic:hover { background: var(--blue-100); text-decoration: none; color: var(--blue-900); }
+.topic strong { color: var(--blue-800); display: block; margin-bottom: .2em; }
+.topic small { color: var(--blue-600); font-size: .85rem; }
+.practice-box {
+  background: linear-gradient(135deg, var(--blue-100), var(--blue-200));
+  border: 2px solid var(--blue-400); border-radius: var(--radius-lg);
+  padding: 1.5rem; margin: 1.5rem 0;
+}
+.practice-box h3 { color: var(--blue-800); margin-top: 0; }
+.checklist { list-style: none; margin: 0; padding: 0; }
+.checklist li {
+  padding: .5rem 0; display: flex;
+  align-items: flex-start; gap: .75rem;
+}
+.checklist input[type="checkbox"] {
+  margin-top: .3em; accent-color: var(--blue-600); transform: scale(1.2);
+}
+.info-table {
+  width: 100%; border-collapse: collapse; margin: 1rem 0;
+  background: #fff; border-radius: var(--radius); overflow: hidden;
+}
+.info-table th { background: var(--blue-700); color: #fff; padding: .75rem; text-align: left; }
+.info-table td { padding: .75rem; border-bottom: 1px solid var(--blue-100); }
+.info-table tr:hover { background: var(--blue-50); }
+.quiz-question {
+  background: #fff; border-left: 4px solid var(--blue-500);
+  padding: 1rem 1.25rem; margin-bottom: 1rem; border-radius: var(--radius);
+}
+.quiz-question h4 { color: var(--blue-800); }
+.quiz-options { list-style: none; margin: .75rem 0 0; padding: 0; }
+.quiz-options li { margin-bottom: .5rem; }
+.quiz-options label { cursor: pointer; display: flex; gap: .5rem; align-items: center; }
+.quiz-options input[type="radio"] { accent-color: var(--blue-600); }
+.progress-bar { height: 8px; background: var(--blue-100); border-radius: 4px; overflow: hidden; margin: .5rem 0; }
+.progress-bar__fill {
+  height: 100%; background: linear-gradient(90deg, var(--blue-500), var(--blue-700));
+  width: 0%; transition: width .4s;
+}
+.grid-cards {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem; margin: 1rem 0;
+}
+.module-card {
+  background: #fff; border-radius: var(--radius-lg);
+  padding: 1.5rem; border-top: 4px solid var(--blue-600);
+  box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s;
+}
+.module-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.module-card__num {
+  display: inline-block; background: var(--blue-100); color: var(--blue-800);
+  padding: .2em .7em; border-radius: 20px;
+  font-size: .75rem; font-weight: 700; margin-bottom: .5rem;
+}
+.module-card h3 { color: var(--blue-800); margin-bottom: .5rem; }
+.module-card p { color: var(--gray-700); font-size: .9rem; }
+/* --- Блоки теории и практики --- */
+.theory-block {
+  background: var(--blue-50);
+  border-left: 4px solid var(--blue-400);
+  padding: 1.25rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin-bottom: 1.5rem;
+}
+.theory-block h4 {
+  margin-top: 0;
+  color: var(--blue-800);
+  font-size: 1.05rem;
+}
+.theory-block p:last-child { margin-bottom: 0; }
+
+.practice-block {
+  background: var(--white);
+  border: 1px solid var(--blue-200);
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.practice-block h4 {
+  margin-top: 0;
+  color: var(--blue-700);
+  font-size: 1.05rem;
+}
+
+.practice-block textarea {
+  width: 100%;
+  min-height: 110px;
+  padding: .75rem;
+  border: 1px solid var(--blue-300);
+  border-radius: var(--radius);
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: .9rem;
+  resize: vertical;
+  margin-bottom: 1rem;
+  background: var(--gray-50);
+  color: var(--gray-900);
+}
+.practice-block textarea:focus {
+  outline: none;
+  border-color: var(--blue-500);
+  box-shadow: 0 0 0 3px var(--blue-100);
+}
+
+.file-upload-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.file-upload-label {
+  display: inline-flex;
+  align-items: center;
+  gap: .5em;
+  padding: .5em 1.2em;
+  background: var(--blue-100);
+  color: var(--blue-800);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: .9rem;
+  font-weight: 600;
+  transition: background .2s;
+}
+.file-upload-label:hover {
+  background: var(--blue-200);
+}
+.file-upload-input {
+  display: none;
+}
+.preview-img {
+  max-width: 100%;
+  max-height: 250px;
+  border-radius: var(--radius);
+  margin-top: 1rem;
+  display: none;
+  border: 1px solid var(--blue-200);
+  box-shadow: var(--shadow);
+}
+/* --- Панель действий (Сохранить, Печать и т.д.) --- */
+.action-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: var(--blue-50);
+  border: 1px solid var(--blue-200);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+/* Кнопка с контуром (для "Сбросить") */
+.btn--outline {
+  background: transparent;
+  color: var(--blue-600);
+  border: 2px solid var(--blue-600);
+  padding: calc(.6em - 2px) calc(1.4em - 2px); /* Компенсация толщины рамки */
+  margin-left: auto; /* Прижимает кнопку к правому краю */
+}
+
+.btn--outline:hover {
+  background: var(--blue-100);
+  color: var(--blue-800);
+  border-color: var(--blue-800);
+}

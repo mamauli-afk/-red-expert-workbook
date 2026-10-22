@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Приложение В · Окружение</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/print.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div>
+        <h1 class="header__title">Приложение В</h1>
+        <div class="header__subtitle">Инструкция по настройке окружения</div>
+        <div class="header__author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</div>
+      </div>
+      <div class="header__progress">Прогресс: <span id="progressValue">0%</span></div>
+    </header>
+    <aside class="sidebar" data-nav-root="../../"></aside>
+    <main class="main">
+      <div class="breadcrumbs"><a href="../../index.html">Главная</a><span>›</span>Приложение В</div>
+      <h2>Пошаговая настройка</h2>
+      <ol>
+        <li>Установить <strong>.NET SDK</strong> (версия 8.0 или новее).</li>
+        <li>Установить <strong>VS Code</strong> и расширения: C# Dev Kit, Avalonia for VS Code, Live Server.</li>
+        <li>Установить <strong>Firebird Server</strong> (порт <code>3050</code>) и клиентскую библиотеку <code>fbclient.dll</code>.</li>
+        <li>Установить <strong>Red Expert</strong> и подключиться к Firebird (DataSource, порт 3050, SYSDBA / masterkey).</li>
+        <li>Установить шаблоны Avalonia: <code>dotnet new install Avalonia.Templates</code>.</li>
+        <li>Создать проект с архитектурой MVVM: <code>dotnet new avalonia.mvvm -o MyApp</code>.</li>
+        <li>Добавить NuGet-пакеты: <code>FirebirdSql.EntityFrameworkCore.Firebird</code>, <code>FirebirdSql.Data.FirebirdClient</code>, <code>Microsoft.EntityFrameworkCore.Design</code>.</li>
+        <li>Открыть проект в VS Code: <code>code MyApp</code>.</li>
+      </ol>
+      
+      <div class="card">
+        <h3>Структура MVVM-проекта</h3>
+        <p>После создания проекта по шаблону <code>avalonia.mvvm</code>, вы увидите следующие папки:</p>
+        <ul>
+          <li><code>Models/</code> — классы данных (сюда мы потом поместим сгенерированные из БД модели).</li>
+          <li><code>ViewModels/</code> — логика окон и привязка данных (C#).</li>
+          <li><code>Views/</code> — визуальная часть окон (XAML-файлы).</li>
+        </ul>
+        <p>Такое разделение позволит нам легко реализовать CRUD-операции в Модуле 3.</p>
+      </div>
+
+      <div class="btn-group">
+        <a href="appendix-b.html" class="btn btn--secondary">← Б. SQL и C#</a>
+        <a href="appendix-d.html" class="btn">Г. Примеры кода →</a>
+      </div>
+    </main>
+    <footer class="footer">
+      Электронная рабочая тетрадь · 2026<br>
+      <span class="author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</span>
+    </footer>
+  </div>
+  <script src="../../js/storage.js"></script>
+  <script src="../../js/navigation.js"></script>
+  <script src="../../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Модуль 2 · Интеграция с Firebird</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div>
+        <h1 class="header__title">ЭРТ: Модуль 2</h1>
+        <div class="header__subtitle">Интеграция Avalonia UI с Firebird</div>
+        <div class="header__author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</div>
+      </div>
+      <div class="header__progress">Прогресс: <span id="progressValue">0%</span></div>
+    </header>
+    <aside class="sidebar" data-nav-root="../"></aside>
+    <main class="main">
+      <div class="breadcrumbs"><a href="../index.html">Главная</a><span>›</span>Модуль 2</div>
+
+      <div class="card card--highlight">
+        <h2>Цель модуля</h2>
+        <p>Настроить взаимодействие десктопного приложения на Avalonia с базой данных Firebird.</p>
+      </div>
+
+      <h2>Теория и практика</h2>
+
+      <!-- Тема 2.1 -->
+      <div class="card">
+        <h3>Тема 2.1. Подготовка проекта Avalonia (MVVM)</h3>
+        <div class="theory-block">
+          <h4>Теория</h4>
+          <p>Для правильной работы с данными (привязка таблиц, обработка нажатий) мы будем использовать паттерн <strong>MVVM</strong> (Model-View-ViewModel). В Avalonia есть готовый шаблон проекта с уже настроенной структурой папок (Views, ViewModels, Models).</p>
+          <p>Для работы с Firebird в C# необходимо установить соответствующие NuGet-пакеты. Основной пакет EF Core провайдера — <code>FirebirdSql.EntityFrameworkCore.Firebird</code>. Для прямого подключения по ADO.NET используется <code>FirebirdSql.Data.FirebirdClient</code>. Для генерации кода из БД потребуется <code>Microsoft.EntityFrameworkCore.Design</code>.</p>
+        </div>
+        <div class="practice-block">
+          <h4>Практическое задание</h4>
+          <p>1. В терминале VS Code создайте проект с MVVM-структурой: <br>
+          <code>dotnet new avalonia.mvvm -o EmployeeApp</code></p>
+          <p>2. Перейдите в папку проекта и добавьте необходимые пакеты для работы с Firebird и EF Core.</p>
+          <p>Вставьте в поле ниже вывод терминала об успешном создании проекта или список добавленных пакетов из файла <code>.csproj</code>.</p>
+          <textarea data-progress-id="m2t1_text" placeholder="The template 'Avalonia MVVM Application' was created successfully.&#10;...&#10;<PackageReference Include=&quot;FirebirdSql.EntityFrameworkCore.Firebird&quot; Version=&quot;...&quot; />"></textarea>
+        </div>
+      </div>
+
+      <!-- Тема 2.2 -->
+      <div class="card">
+        <h3>Тема 2.2. Настройка подключения к БД</h3>
+        <div class="theory-block">
+          <h4>Теория</h4>
+          <p>Строка подключения (Connection String) в Firebird содержит хост, порт, путь к файлу БД и учетные данные. В коде C# для открытия соединения используется класс <code>FbConnection</code>. Важно обрабатывать исключения (try/catch) при подключении, так как сервер может быть недоступен или путь к файлу может быть указан неверно.</p>
+        </div>
+        <div class="practice-block">
+          <h4>Практическое задание</h4>
+          <p>Напишите фрагмент кода на C#, который создаёт подключение <code>FbConnection</code> с вашей строкой подключения и открывает его асинхронно.</p>
+          <textarea data-progress-id="m2t2_text" placeholder="using var conn = new FbConnection(cs); await conn.OpenAsync();"></textarea>
+        </div>
+      </div>
+
+      <!-- Тема 2.3 -->
+      <div class="card">
+        <h3>Тема 2.3. Scaffolding моделей (Генерация кода)</h3>
+        <div class="theory-block">
+          <h4>Теория</h4>
+          <p>Entity Framework Core позволяет автоматически генерировать классы C# (модели и DbContext) на основе уже существующей базы данных. Для этого используется команда <code>dotnet ef dbcontext scaffold</code>, в которой явно указывается строка подключения и провайдер <code>FirebirdSql.EntityFrameworkCore.Firebird</code>. Сгенерированные классы принято помещать в папку <code>Models</code>.</p>
+        </div>
+        <div class="practice-block">
+          <h4>Практическое задание</h4>
+          <p>Выполните команду scaffolding в терминале VS Code для вашей БД, указав папку вывода <code>Models</code>. Вставьте в поле ниже сгенерированный класс <code>Department</code> (или другой вашей таблицы).</p>
+          <textarea data-progress-id="m2t3_text" placeholder="public partial class Department { public int Id { get; set; } ... }"></textarea>
+        </div>
+      </div>
+
+      <h2>Самопроверка</h2>
+      <ul class="checklist">
+        <li><input type="checkbox" data-progress-id="m2t1_text"><span>MVVM-проект создан, пакеты установлены</span></li>
+        <li><input type="checkbox" data-progress-id="m2t2_text"><span>Код подключения написан</span></li>
+        <li><input type="checkbox" data-progress-id="m2t3_text"><span>Модели сгенерированы</span></li>
+      </ul>
+
+      <div class="action-bar">
+        <button type="button" class="btn" id="btnSave">Сохранить</button>
+        <button type="button" class="btn" id="btnPrint">Печать / PDF</button>
+        <button type="button" class="btn" id="btnExport">Экспорт JSON</button>
+        <button type="button" class="btn btn--outline" id="btnReset">Сбросить данные</button>
+      </div>
+
+      <div class="btn-group">
+        <a href="module1.html" class="btn btn--secondary">← Модуль 1</a>
+        <a href="module3.html" class="btn">Модуль 3 →</a>
+      </div>
+    </main>
+    <footer class="footer">
+      Электронная рабочая тетрадь · 2026<br>
+      <span class="author">Автор: Дешина И.А., преподаватель ОГАПОУ "Алексеевский колледж"</span>
+    </footer>
+  </div>
+  <script src="../js/storage.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

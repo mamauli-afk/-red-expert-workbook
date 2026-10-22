@@ -1,0 +1,8 @@
+@media print {
+  .header, .sidebar, .footer, .btn-group, .breadcrumbs { display: none !important; }
+  .app { display: block; }
+  .main { padding: 0; }
+  body { background: #fff; }
+  .card { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+  a { color: #000; text-decoration: none; }
+}
